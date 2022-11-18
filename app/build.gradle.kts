@@ -43,20 +43,16 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":data"))
 
-    //retrofit
-    implementation(Libs.retrofit)
-    implementation(Libs.retrofit_converter_gson)
-
     //coil
     implementation(Libs.coil)
-
-    //koin
-    implementation(Libs.koin_android)
-    implementation(Libs.koin_core)
 
     // Coroutine Lifecycle Scopes
     implementation(Libs.lifecycle_vm)
     implementation(Libs.lifecycle_runtime)
+
+    //koin
+    implementation(Libs.koin_android)
+    implementation(Libs.koin_core)
 
     //adapter delegates
     implementation(Libs.adapter_delegates)
