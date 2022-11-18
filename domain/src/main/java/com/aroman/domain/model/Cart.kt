@@ -1,13 +1,13 @@
 package com.aroman.domain.model
 
-data class Basket(
-    val basketItemList: List<BasketItem>,
+data class Cart(
+    val cartItemList: List<CartItem>,
     val delivery: String,
     val id: Int,
     val totalPrice: Int
 )
 
-data class BasketItem(
+data class CartItem(
     val id: Int,
     val imageUrl: String,
     val price: Int,

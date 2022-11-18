@@ -1,6 +1,6 @@
 package com.aroman.data.model.cart_dto
 
-import com.aroman.domain.model.Basket
+import com.aroman.domain.model.Cart
 import com.google.gson.annotations.SerializedName
 
 data class CartDto(
@@ -10,8 +10,8 @@ data class CartDto(
     @SerializedName("total") val total: Int
 )
 
-fun CartDto.toBasket() = Basket(
-    basketItemList = cart.map { it.toCartItem() },
+fun CartDto.toBasket() = Cart(
+    cartItemList = cart.map { it.toCartItem() },
     delivery = delivery,
     id = id,
     totalPrice = total,

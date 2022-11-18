@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -30,4 +31,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+}
+
+dependencies {
+    // Coroutine Lifecycle Scopes
+    implementation(Libs.lifecycle_vm)
+    implementation(Libs.lifecycle_runtime)
 }
