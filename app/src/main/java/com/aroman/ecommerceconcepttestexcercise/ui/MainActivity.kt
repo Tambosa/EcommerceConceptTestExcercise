@@ -3,6 +3,8 @@ package com.aroman.ecommerceconcepttestexcercise.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.aroman.ecommerceconcepttestexcercise.R
+import com.aroman.ecommerceconcepttestexcercise.ui.cart.CartFragment
+import com.aroman.ecommerceconcepttestexcercise.ui.details.DetailsFragment
 import com.aroman.ecommerceconcepttestexcercise.ui.home.HomeFragment
 
 class MainActivity : AppCompatActivity() {
