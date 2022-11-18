@@ -16,9 +16,9 @@ data class HomeStoreItem(
 
 data class BestSellerItem(
     val id: Int,
-    val is_favorites: Boolean = false,
+    val isFavorites: Boolean = false,
     val title: String,
-    val price_without_discount: Int,
-    val discount_price: String,
-    val isBuy: Boolean
+    val priceWithoutDiscount: Int,
+    val discountPrice: Int,
+    val pictureUrl: String
 )
