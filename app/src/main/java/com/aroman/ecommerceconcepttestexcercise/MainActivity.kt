@@ -7,10 +7,14 @@ import androidx.lifecycle.lifecycleScope
 import com.aroman.data.repository.MockyRepositoryImpl
 import com.aroman.data.repository.retrofit.MockyApi
 import com.aroman.data.repository.retrofit.RetrofitClient
+import com.aroman.domain.repository.MockyRepository
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
+    private val repo: MockyRepository by inject()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.Theme_EcommerceConceptTestExcercise)
@@ -18,8 +22,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        val repo =
-            MockyRepositoryImpl(RetrofitClient().provideRetrofit().create(MockyApi::class.java))
         lifecycleScope.launch{
             Log.d("@@@", "\ngetHomePage\n" + repo.getHomePage().toString())
             Log.d("@@@", "\ngetCartContents\n" + repo.getCartContents().toString())
