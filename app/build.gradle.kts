@@ -43,6 +43,10 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":data"))
 
+    //retrofit
+    implementation(Libs.retrofit)
+    implementation(Libs.retrofit_converter_gson)
+
     //coil
     implementation(Libs.coil)
 
