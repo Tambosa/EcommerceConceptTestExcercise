@@ -6,7 +6,10 @@ object Libs {
     const val koin_core = "io.insert-koin:koin-core:${Versions.koin}"
     const val lifecycle_vm = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
     const val lifecycle_runtime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
-    const val adapter_delegates = "com.hannesdorfmann:adapterdelegates4:${Versions.adapter_delegates}"
+    const val adapter_delegates =
+        "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:${Versions.adapter_delegates}"
+    const val adapter_delegates_viewbinding =
+        "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:${Versions.adapter_delegates}"
     const val core_ktx = "androidx.core:core-ktx:${Versions.core_ktx}"
     const val appcompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
     const val material = "com.google.android.material:material:${Versions.material}"

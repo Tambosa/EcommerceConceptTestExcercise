@@ -57,6 +57,7 @@ dependencies {
 
     //adapter delegates
     implementation(Libs.adapter_delegates)
+    implementation(Libs.adapter_delegates_viewbinding)
 
     implementation(Libs.core_ktx)
     implementation(Libs.appcompat)
