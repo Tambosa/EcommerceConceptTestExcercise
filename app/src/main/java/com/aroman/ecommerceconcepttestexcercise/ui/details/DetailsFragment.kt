@@ -128,25 +128,19 @@ class DetailsFragment : Fragment() {
     }
 
     private fun onColorItemClick(position: Int) {
-        for (colorChoice in colorChoiceAdapter.getData()) {
-            if (colorChoice.isChosen) {
-                colorChoice.isChosen = false
-                (dialogBinding.recyclerColor.findViewHolderForAdapterPosition(
-                    colorChoiceAdapter.getData().indexOf(colorChoice)
-                ) as ColorChoiceAdapter.ColorChoiceViewHolder).removeCheck()
-            }
-        }
+        Toast.makeText(
+            requireContext(),
+            colorChoiceAdapter.getData()[position].toString(),
+            Toast.LENGTH_SHORT
+        ).show()
     }
 
     private fun onCapacityItemClick(position: Int) {
-        for (capacityChoice in capacityChoiceAdapter.getData()) {
-            if (capacityChoice.isChosen) {
-                capacityChoice.isChosen = false
-                (dialogBinding.recyclerCapacity.findViewHolderForAdapterPosition(
-                    capacityChoiceAdapter.getData().indexOf(capacityChoice)
-                ) as CapacityChoiceAdapter.CapacityChoiceViewHolder).resetColor()
-            }
-        }
+        Toast.makeText(
+            requireContext(),
+            capacityChoiceAdapter.getData()[position].toString(),
+            Toast.LENGTH_SHORT
+        ).show()
     }
 
     private fun initCarousel(imageUrls: List<String>) {

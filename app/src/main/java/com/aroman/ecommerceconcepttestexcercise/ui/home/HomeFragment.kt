@@ -16,7 +16,10 @@ import com.aroman.ecommerceconcepttestexcercise.R
 import com.aroman.ecommerceconcepttestexcercise.databinding.BottomSheetHomeBinding
 import com.aroman.ecommerceconcepttestexcercise.databinding.FragmentHomeBinding
 import com.aroman.ecommerceconcepttestexcercise.ui.details.DetailsFragment
-import com.aroman.ecommerceconcepttestexcercise.ui.home.adapters.*
+import com.aroman.ecommerceconcepttestexcercise.ui.home.adapters.BestSellerAdapter
+import com.aroman.ecommerceconcepttestexcercise.ui.home.adapters.CategoryAdapter
+import com.aroman.ecommerceconcepttestexcercise.ui.home.adapters.HotSalesAdapter
+import com.aroman.ecommerceconcepttestexcercise.ui.home.adapters.autoScroll
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -108,26 +111,11 @@ class HomeFragment : Fragment() {
     }
 
     private fun onCategoryItemClick(position: Int) {
-        manageCategoryColors(position)
         Toast.makeText(
             requireContext(),
             categoryAdapter.getData()[position].toString(),
             Toast.LENGTH_SHORT
         ).show()
-    }
-
-    private fun manageCategoryColors(position: Int) {
-        for (category in categoryAdapter.getData()) {
-            if (category.isChecked) {
-                category.isChecked = false
-                (binding.recyclerCategory.findViewHolderForAdapterPosition(
-                    categoryAdapter.getData().indexOf(category)
-                ) as CategoryViewHolder).resetColor()
-            }
-        }
-        categoryAdapter.getData()[position].isChecked = true
-        (binding.recyclerCategory.findViewHolderForAdapterPosition(position)
-                as CategoryViewHolder).changeColor()
     }
 
     private fun onBestSellerItemClick(position: Int) {

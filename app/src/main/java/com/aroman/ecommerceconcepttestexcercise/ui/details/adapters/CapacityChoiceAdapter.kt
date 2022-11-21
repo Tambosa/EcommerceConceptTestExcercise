@@ -10,6 +10,8 @@ import com.aroman.ecommerceconcepttestexcercise.databinding.ItemCapacityBinding
 class CapacityChoiceAdapter(private val onItemClick: (position: Int) -> Unit) :
     RecyclerView.Adapter<CapacityChoiceAdapter.CapacityChoiceViewHolder>() {
     private var data = listOf<CapacityChoice>()
+    private var lastCheckedPosition: Int = 0
+
     fun setData(data: List<CapacityChoice>) {
         this.data = data
     }
@@ -36,21 +38,29 @@ class CapacityChoiceAdapter(private val onItemClick: (position: Int) -> Unit) :
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(capacityChoice: CapacityChoice) {
             binding.buttonCapacity.text = "${capacityChoice.capacity} GB"
-
-            binding.buttonCapacity.setOnClickListener {
-                onItemClick(layoutPosition)
-                capacityChoice.isChosen = true
+            if (capacityChoice.isChosen) {
                 changeColor()
+            } else {
+                resetColor()
+            }
+            binding.buttonCapacity.setOnClickListener {
+                data[lastCheckedPosition].isChosen = false
+                notifyItemChanged(lastCheckedPosition)
+                data[layoutPosition].isChosen = true
+                notifyItemChanged(layoutPosition)
+
+                lastCheckedPosition = layoutPosition
+                onItemClick(layoutPosition)
             }
         }
 
-        fun changeColor() {
+        private fun changeColor() {
             binding.buttonCapacity.setTextColor(itemView.context.getColor(R.color.white))
             binding.buttonCapacity.backgroundTintList =
                 itemView.context.resources.getColorStateList(R.color.ecommerce_orange, null)
         }
 
-        fun resetColor() {
+        private fun resetColor() {
             binding.buttonCapacity.setTextColor(itemView.context.getColor(R.color.ecommerce_grey_dark))
             binding.buttonCapacity.backgroundTintList =
                 itemView.context.resources.getColorStateList(R.color.white, null)

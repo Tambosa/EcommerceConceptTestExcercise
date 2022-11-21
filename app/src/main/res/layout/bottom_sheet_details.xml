@@ -36,6 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/bottom_sheet_details_title_margin_start"
         android:layout_marginTop="@dimen/rating_bar_margin_top"
+        android:isIndicator="true"
         android:scaleX=".5"
         android:scaleY=".5"
         android:transformPivotX="0dp"
@@ -168,9 +169,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_capacity"
             android:layout_width="0dp"
-            android:layout_marginEnd="@dimen/bottom_sheet_details_title_margin_start"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/bottom_sheet_details_title_margin_start"
             android:layout_weight="1" />
     </LinearLayout>
 
