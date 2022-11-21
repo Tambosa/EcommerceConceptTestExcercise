@@ -15,6 +15,7 @@ import com.aroman.domain.model.HomeStoreItem
 import com.aroman.ecommerceconcepttestexcercise.R
 import com.aroman.ecommerceconcepttestexcercise.databinding.BottomSheetHomeBinding
 import com.aroman.ecommerceconcepttestexcercise.databinding.FragmentHomeBinding
+import com.aroman.ecommerceconcepttestexcercise.ui.details.DetailsFragment
 import com.aroman.ecommerceconcepttestexcercise.ui.home.adapters.*
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -107,6 +108,15 @@ class HomeFragment : Fragment() {
     }
 
     private fun onCategoryItemClick(position: Int) {
+        manageCategoryColors(position)
+        Toast.makeText(
+            requireContext(),
+            categoryAdapter.getData()[position].toString(),
+            Toast.LENGTH_SHORT
+        ).show()
+    }
+
+    private fun manageCategoryColors(position: Int) {
         for (category in categoryAdapter.getData()) {
             if (category.isChecked) {
                 category.isChecked = false
@@ -116,11 +126,15 @@ class HomeFragment : Fragment() {
             }
         }
         categoryAdapter.getData()[position].isChecked = true
-        //do smth when category is selected
+        (binding.recyclerCategory.findViewHolderForAdapterPosition(position)
+                as CategoryViewHolder).changeColor()
     }
 
     private fun onBestSellerItemClick(position: Int) {
-        //open details fragment
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.main_container, DetailsFragment())
+            .addToBackStack(null)
+            .commit()
     }
 
     private fun onBestSellerFavouriteClick(position: Int) {

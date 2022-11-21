@@ -77,6 +77,7 @@
         <item name="android:textColor">@color/ecommerce_deep_blue</item>
         <item name="android:textSize">18sp</item>
         <item name="android:fontFamily">@font/mark_pro</item>
+        <item name="android:letterSpacing">-0.02</item>
     </style>
 
     <style name="text_bottom_sheet_spinner">
@@ -91,5 +92,44 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">18sp</item>
         <item name="android:fontFamily">@font/mark_pro</item>
+    </style>
+
+    <style name="text_details_bottom_sheet_title">
+        <item name="android:fontWeight">500</item>
+        <item name="android:textColor">@color/ecommerce_deep_blue</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">@font/mark_pro</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="text_details_bottom_sheet_select">
+        <item name="android:fontWeight">500</item>
+        <item name="android:textColor">@color/ecommerce_deep_blue</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/mark_pro</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="text_details_bottom_sheet_details">
+        <item name="android:fontWeight">400</item>
+        <item name="android:textColor">@color/ecommerce_grey_dark</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:fontFamily">@font/mark_pro</item>
+    </style>
+
+    <style name="text_details_bottom_sheet_add_to_cart">
+        <item name="android:fontWeight">700</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/mark_pro</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="text_details_bottom_sheet_capacity">
+        <item name="android:fontWeight">700</item>
+        <item name="android:textColor">@color/ecommerce_grey_dark</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/mark_pro</item>
+        <item name="android:letterSpacing">-0.03</item>
     </style>
 </resources>

@@ -59,8 +59,9 @@ dependencies {
     implementation(Libs.koin_core)
 
     //adapter delegates
-    implementation(Libs.adapter_delegates)
     implementation(Libs.adapter_delegates_viewbinding)
+
+    implementation ("org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:2.1.0")
 
     implementation(Libs.core_ktx)
     implementation(Libs.appcompat)

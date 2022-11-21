@@ -3,15 +3,15 @@ package com.aroman.ecommerceconcepttestexcercise.ui.home.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.aroman.domain.model.Category
+import com.aroman.domain.model.CategoryChoice
 import com.aroman.ecommerceconcepttestexcercise.databinding.ItemCategoryBinding
 
 class CategoryAdapter(private val onItemClick: (position: Int) -> Unit) :
     RecyclerView.Adapter<CategoryViewHolder>() {
 
-    private var data = listOf<Category>()
+    private var data = listOf<CategoryChoice>()
 
-    fun setData(data: List<Category>) {
+    fun setData(data: List<CategoryChoice>) {
         this.data = data
     }
 

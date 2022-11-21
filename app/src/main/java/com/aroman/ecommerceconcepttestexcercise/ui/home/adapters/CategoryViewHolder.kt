@@ -1,7 +1,7 @@
 package com.aroman.ecommerceconcepttestexcercise.ui.home.adapters
 
 import androidx.recyclerview.widget.RecyclerView
-import com.aroman.domain.model.Category
+import com.aroman.domain.model.CategoryChoice
 import com.aroman.ecommerceconcepttestexcercise.R
 import com.aroman.ecommerceconcepttestexcercise.databinding.ItemCategoryBinding
 
@@ -10,13 +10,11 @@ class CategoryViewHolder(
     private val onItemClick: (position: Int) -> Unit
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(item: Category) {
-        binding.categoryButton.setImageDrawable(itemView.context.getDrawable(item.iconId))
+    fun bind(item: CategoryChoice) {
+        binding.categoryButton.setImageDrawable(itemView.context.getDrawable(item.iconResId))
         binding.categoryText.text = item.name
         binding.categoryButton.setOnClickListener {
             onItemClick(layoutPosition)
-            resetColor()
-            if (item.isChecked) changeColor()
         }
     }
 

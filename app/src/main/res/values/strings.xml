@@ -12,6 +12,10 @@
     <string name="brand">Brand</string>
     <string name="price">Price</string>
     <string name="size">Size</string>
+    <string name="product_details">Product Details</string>
+    <string name="show_details">Show Details</string>
+    <string name="select_color_and_capacity">Select color and capacity</string>
+    <string name="add_to_cart">Add to Cart</string>
 
     <string-array name="bottom_sheet_spinner_brand">
         <item>Samsung</item>

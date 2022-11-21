@@ -42,4 +42,27 @@
     <dimen name="bottom_sheet_text_margin_top">18dp</dimen>
     <dimen name="bottom_sheet_last_item_margin_bottom">44dp</dimen>
     <dimen name="bottom_sheet_spinner_min_height">37dp</dimen>
+    <dimen name="top_buttons_margin_top">36dp</dimen>
+    <dimen name="back_button_margin_start">42dp</dimen>
+    <dimen name="cart_button_margin_end">35dp</dimen>
+    <dimen name="product_details_title_margin_top">43dp</dimen>
+    <dimen name="product_details_carousel_margin_vertical">40dp</dimen>
+    <dimen name="show_details_margin_bottom">46dp</dimen>
+    <dimen name="details_image_padding">5dp</dimen>
+    <dimen name="details_card_view_corner_radius">20dp</dimen>
+    <dimen name="details_card_view_margin_horizontal">20dp</dimen>
+    <dimen name="bottom_sheet_details_title_margin_top">28dp</dimen>
+    <dimen name="bottom_sheet_details_title_margin_start">38dp</dimen>
+    <dimen name="details_bottom_sheet_favourite_button_margin_end">37dp</dimen>
+    <dimen name="favourite_button_width">37dp</dimen>
+    <dimen name="favourite_button_height">33dp</dimen>
+    <dimen name="rating_bar_margin_top">7dp</dimen>
+    <dimen name="details_bottom_sheet_text_select_margin_top">29dp</dimen>
+    <dimen name="bottom_sheet_details_radio_container_margin_start">15dp</dimen>
+    <dimen name="bottom_sheet_details_button_add_to_cart_margin_horizontal">30dp</dimen>
+    <dimen name="bottom_sheet_details_button_add_to_cart_margin_bottom">58dp</dimen>
+    <dimen name="bottom_shee_details_price_margin_end">38dp</dimen>
+    <dimen name="button_add_to_cart_height">54dp</dimen>
+    <dimen name="item_button_image_size">40dp</dimen>
+    <dimen name="item_button_image_recycler">5dp</dimen>
 </resources>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_background">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/text_details_bottom_sheet_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/bottom_sheet_details_title_margin_start"
+        android:layout_marginTop="@dimen/bottom_sheet_details_title_margin_top"
+        app:layout_constraintEnd_toStartOf="@+id/button_favourite"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Galaxy Note 20 Ultra" />
+
+    <ImageButton
+        android:id="@+id/button_favourite"
+        android:layout_width="@dimen/favourite_button_width"
+        android:layout_height="@dimen/favourite_button_height"
+        android:layout_marginTop="@dimen/bottom_sheet_details_title_margin_top"
+        android:layout_marginEnd="@dimen/details_bottom_sheet_favourite_button_margin_end"
+        android:background="@drawable/favourite_button"
+        android:src="@drawable/ic_favourite_false_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <RatingBar
+        android:id="@+id/rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/bottom_sheet_details_title_margin_start"
+        android:layout_marginTop="@dimen/rating_bar_margin_top"
+        android:scaleX=".5"
+        android:scaleY=".5"
+        android:transformPivotX="0dp"
+        android:transformPivotY="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <ImageView
+        android:id="@+id/image_cpu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_cpu"
+        app:layout_constraintEnd_toStartOf="@+id/image_camera"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rating_bar" />
+
+    <ImageView
+        android:id="@+id/image_camera"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_camera"
+        app:layout_constraintEnd_toStartOf="@+id/image_ssd"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/image_cpu"
+        app:layout_constraintTop_toBottomOf="@id/rating_bar" />
+
+    <ImageView
+        android:id="@+id/image_ssd"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_ssd"
+        app:layout_constraintEnd_toStartOf="@+id/image_sd"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/image_camera"
+        app:layout_constraintTop_toBottomOf="@id/rating_bar" />
+
+    <ImageView
+        android:id="@+id/image_sd"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_sd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/image_ssd"
+        app:layout_constraintTop_toBottomOf="@id/rating_bar" />
+
+    <TextView
+        android:id="@+id/text_cpu"
+        style="@style/text_details_bottom_sheet_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/text_camera"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_cpu"
+        tools:text="Exynos 990" />
+
+    <TextView
+        android:id="@+id/text_camera"
+        style="@style/text_details_bottom_sheet_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/text_ssd"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/text_cpu"
+        app:layout_constraintTop_toBottomOf="@id/image_cpu"
+        tools:text="108 + 12mp" />
+
+    <TextView
+        android:id="@+id/text_ssd"
+        style="@style/text_details_bottom_sheet_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/text_sd"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/text_camera"
+        app:layout_constraintTop_toBottomOf="@id/image_cpu"
+        tools:text="8GB" />
+
+    <TextView
+        android:id="@+id/text_sd"
+        style="@style/text_details_bottom_sheet_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/text_ssd"
+        app:layout_constraintTop_toBottomOf="@id/image_cpu"
+        tools:text="256GB" />
+
+    <TextView
+        android:id="@+id/text_select"
+        style="@style/text_details_bottom_sheet_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/bottom_sheet_details_title_margin_start"
+        android:layout_marginTop="@dimen/details_bottom_sheet_text_select_margin_top"
+        android:text="@string/select_color_and_capacity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_cpu" />
+
+    <LinearLayout
+        android:id="@+id/buttons_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/bottom_sheet_details_radio_container_margin_start"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_select">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_color"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/bottom_sheet_details_title_margin_start"
+            android:layout_weight="1"
+            tools:listitem="@layout/item_color" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_capacity"
+            android:layout_width="0dp"
+            android:layout_marginEnd="@dimen/bottom_sheet_details_title_margin_start"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_add_to_cart"
+        style="@style/text_details_bottom_sheet_add_to_cart"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_add_to_cart_height"
+        android:layout_marginStart="@dimen/bottom_sheet_details_button_add_to_cart_margin_horizontal"
+        android:layout_marginTop="@dimen/bottom_sheet_details_radio_container_margin_start"
+        android:layout_marginEnd="@dimen/bottom_sheet_details_button_add_to_cart_margin_horizontal"
+        android:layout_marginBottom="@dimen/bottom_sheet_details_button_add_to_cart_margin_bottom"
+        android:backgroundTint="@color/ecommerce_orange"
+        android:text="@string/add_to_cart"
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttons_container" />
+
+    <TextView
+        android:id="@+id/price"
+        style="@style/text_details_bottom_sheet_add_to_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/bottom_shee_details_price_margin_end"
+        android:translationZ="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/button_add_to_cart"
+        app:layout_constraintEnd_toEndOf="@id/button_add_to_cart"
+        app:layout_constraintTop_toTopOf="@id/button_add_to_cart"
+        tools:text="$1500.00" />
+</androidx.constraintlayout.widget.ConstraintLayout>

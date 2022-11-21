@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="37dp"
+    android:height="37dp"
+    android:viewportWidth="37"
+    android:viewportHeight="37">
+    <path
+        android:fillColor="@color/ecommerce_deep_blue"
+        android:pathData="M0 10c0-5.52 4.48-10 10-10h17c5.52 0 10 4.48 10 10v17c0 5.52-4.48 10-10 10h-17c-5.52 0-10-4.48-10-10z" />
+    <path
+        android:pathData="M22 25l-7-7 7-7"
+        android:strokeWidth="2"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>
