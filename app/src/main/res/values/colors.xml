@@ -12,4 +12,5 @@
     <color name="ecommerce_deep_blue">#010035</color>
     <color name="ecommerce_grey_dark">#B3B3C3</color>
     <color name="ecommerce_grey_light">#CCCCCC</color>
+    <color name="ecommerce_background">#F5F5F5</color>
 </resources>

@@ -1,7 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="splashScreenText">
-        <item name="android:textStyle">normal</item>
+
+    <style name="large_text_style">
+        <item name="android:fontWeight">700</item>
+        <item name="android:textColor">@color/ecommerce_deep_blue</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:fontFamily">@font/mark_pro</item>
+    </style>
+
+    <style name="button_text_style">
+        <item name="android:fontWeight">500</item>
+        <item name="android:textColor">@color/ecommerce_orange</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">@font/mark_pro</item>
+    </style>
+
+    <style name="category_text_style">
+        <item name="android:fontWeight">500</item>
+        <item name="android:textColor">@color/ecommerce_deep_blue</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/mark_pro</item>
+    </style>
+
+    <style name="price_text_style">
+        <item name="android:fontWeight">700</item>
+        <item name="android:textColor">@color/ecommerce_deep_blue</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/mark_pro</item>
+    </style>
+
+    <style name="old_price_text_style">
+        <item name="android:fontWeight">500</item>
+        <item name="android:textColor">@color/ecommerce_grey_light</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/mark_pro</item>
+    </style>
+
+    <style name="item_name_style">
+        <item name="android:fontWeight">400</item>
+        <item name="android:textColor">@color/ecommerce_deep_blue</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/mark_pro</item>
+    </style>
+
+    <style name="text_hot_sales_new_style">
+        <item name="android:fontWeight">700</item>
         <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/sf_pro_display</item>
+    </style>
+
+    <style name="text_hot_sales_title_style">
+        <item name="android:fontWeight">700</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:fontFamily">@font/sf_pro_display</item>
+    </style>
+
+    <style name="text_hot_sales_subtitle_style">
+        <item name="android:fontWeight">400</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:fontFamily">@font/sf_pro_display</item>
+    </style>
+
+    <style name="text_hot_sales_buy_style">
+        <item name="android:fontWeight">700</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/ecommerce_deep_blue</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:fontFamily">@font/sf_pro_display</item>
+    </style>
+
+    <style name="text_bottom_sheet_title">
+        <item name="android:fontWeight">500</item>
+        <item name="android:textColor">@color/ecommerce_deep_blue</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/mark_pro</item>
+    </style>
+
+    <style name="text_bottom_sheet_spinner">
+        <item name="android:fontWeight">400</item>
+        <item name="android:textColor">@color/ecommerce_deep_blue</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/mark_pro</item>
+    </style>
+
+    <style name="text_bottom_sheet_button_done">
+        <item name="android:fontWeight">500</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/mark_pro</item>
     </style>
 </resources>

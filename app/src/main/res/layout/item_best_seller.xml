@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/best_seller_item_width"
+    android:layout_height="@dimen/best_seller_item_hight"
+    android:layout_marginEnd="@dimen/best_seller_item_margin_end"
+    android:layout_marginBottom="@dimen/best_seller_item_margin_bottom"
+    android:background="@color/white"
+    app:cardCornerRadius="@dimen/corner_radius_card_view"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_best_seller"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/best_seller_image_height"
+            android:layout_marginTop="@dimen/best_seller_image_margin_top"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/price_best_seller"
+            style="@style/price_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/best_seller_text_margin_start"
+            android:layout_marginTop="@dimen/price_margin_top"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_best_seller"
+            tools:text="$1,047" />
+
+        <TextView
+            android:id="@+id/old_price_best_seller"
+            style="@style/old_price_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/old_price_margin_start"
+            android:layout_marginTop="@dimen/old_price_margin_top"
+            android:foreground="@drawable/striked_through_text"
+            app:layout_constraintStart_toEndOf="@id/price_best_seller"
+            app:layout_constraintTop_toBottomOf="@id/image_best_seller"
+            tools:text="$1,500" />
+
+        <TextView
+            android:id="@+id/title_best_seller"
+            style="@style/item_name_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/best_seller_text_margin_start"
+            android:layout_marginTop="@dimen/best_seller_title_margin_top"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/price_best_seller"
+            tools:text="Samsung Galaxy s20 Ultra" />
+
+        <ImageButton
+            android:id="@+id/button_favourite"
+            android:layout_width="@dimen/favourite_button_size"
+            android:layout_height="@dimen/favourite_button_size"
+            android:layout_marginTop="@dimen/favourite_button_margin"
+            android:layout_marginEnd="@dimen/favourite_button_margin"
+            android:background="@drawable/ic_favourite_background"
+            android:src="@drawable/ic_favourite_false_foreground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_background">
+
+    <ImageButton
+        android:id="@+id/button_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/close_button_margin_start"
+        android:layout_marginTop="@dimen/first_item_bottom_sheet_margin_top"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/text_bottom_sheet_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/bottom_sheet_title_margin_top"
+        android:gravity="center"
+        android:text="@string/filter_options"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_done"
+        style="@style/text_bottom_sheet_button_done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/first_item_bottom_sheet_margin_top"
+        android:layout_marginEnd="@dimen/bottom_sheet_button_done_margin_end"
+        android:background="@drawable/done_button_background"
+        android:text="@string/done"
+        android:textAllCaps="false"
+        app:backgroundTint="@color/ecommerce_orange"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_brand"
+        style="@style/text_bottom_sheet_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/bottom_sheet_children_margin_start"
+        android:layout_marginTop="@dimen/bottom_sheet_text_brand_margin_top"
+        android:text="@string/brand"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_close" />
+
+    <Spinner
+        android:id="@+id/spinner_brand"
+        style="@style/text_bottom_sheet_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/bottom_sheet_children_margin_start"
+        android:layout_marginTop="@dimen/bottom_sheet_spinner_margin_top"
+        android:layout_marginEnd="@dimen/bottom_sheet_children_margin_end"
+        android:background="@drawable/bottom_sheet_spinner"
+        android:minHeight="@dimen/bottom_sheet_spinner_min_height"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_brand" />
+
+    <TextView
+        android:id="@+id/text_price"
+        style="@style/text_bottom_sheet_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/bottom_sheet_children_margin_start"
+        android:layout_marginTop="@dimen/bottom_sheet_text_margin_top"
+        android:text="@string/price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_brand" />
+
+    <Spinner
+        android:id="@+id/spinner_price"
+        style="@style/text_bottom_sheet_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/bottom_sheet_children_margin_start"
+        android:layout_marginTop="@dimen/bottom_sheet_spinner_margin_top"
+        android:layout_marginEnd="@dimen/bottom_sheet_children_margin_end"
+        android:background="@drawable/bottom_sheet_spinner"
+        android:minHeight="@dimen/bottom_sheet_spinner_min_height"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_price" />
+
+    <TextView
+        android:id="@+id/text_size"
+        style="@style/text_bottom_sheet_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/bottom_sheet_children_margin_start"
+        android:layout_marginTop="@dimen/bottom_sheet_text_margin_top"
+        android:text="@string/size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_price" />
+
+    <Spinner
+        android:id="@+id/spinner_size"
+        style="@style/text_bottom_sheet_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/bottom_sheet_children_margin_start"
+        android:layout_marginTop="@dimen/bottom_sheet_spinner_margin_top"
+        android:layout_marginEnd="@dimen/bottom_sheet_children_margin_end"
+        android:layout_marginBottom="@dimen/bottom_sheet_last_item_margin_bottom"
+        android:background="@drawable/bottom_sheet_spinner"
+        android:minHeight="@dimen/bottom_sheet_spinner_min_height"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_size" />
+</androidx.constraintlayout.widget.ConstraintLayout>

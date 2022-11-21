@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">EcommerceConceptTestExcercise</string>
+    <string name="select_category">Select Category</string>
+    <string name="view_all">view all</string>
+    <string name="hot_sales">Hot sales</string>
+    <string name="best_seller">Best Seller</string>
+    <string name="see_more">see more</string>
+    <string name="text_new">NEW</string>
+    <string name="buy_now">Buy now!</string>
+    <string name="filter_options">Filter options</string>
+    <string name="done">Done</string>
+    <string name="brand">Brand</string>
+    <string name="price">Price</string>
+    <string name="size">Size</string>
+
+    <string-array name="bottom_sheet_spinner_brand">
+        <item>Samsung</item>
+        <item>Iphone</item>
+        <item>Xiaomi</item>
+    </string-array>
+    <string-array name="bottom_sheet_spinner_price">
+        <item>$300-$500</item>
+        <item>$500-$700</item>
+        <item>above $700</item>
+    </string-array>
+    <string-array name="bottom_sheet_spinner_size">
+        <item>4.5 to 5.5 inches</item>
+        <item>5.5 to 6.5 inches</item>
+        <item>above 6.5 inches</item>
+    </string-array>
 </resources>

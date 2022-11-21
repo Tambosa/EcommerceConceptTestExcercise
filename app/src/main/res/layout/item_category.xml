@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/margin_side"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/category_button"
+        android:layout_width="@dimen/category_button_size"
+        android:layout_height="@dimen/category_button_size"
+        android:background="@drawable/splash_circle"
+        android:backgroundTint="@color/white"
+        app:tint="@color/ecommerce_grey_light"
+        tools:src="@drawable/ic_phone" />
+
+    <TextView
+        android:id="@+id/category_text"
+        style="@style/category_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/ecommerce_deep_blue"
+        tools:text="Phones" />
+</LinearLayout>
