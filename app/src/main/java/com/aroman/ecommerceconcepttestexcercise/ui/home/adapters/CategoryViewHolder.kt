@@ -15,18 +15,19 @@ class CategoryViewHolder(
         binding.categoryText.text = item.name
         binding.categoryButton.setOnClickListener {
             onItemClick(layoutPosition)
-            if (item.isChecked) changeColor() else resetColor()
+            resetColor()
+            if (item.isChecked) changeColor()
         }
     }
 
-    private fun changeColor() {
+    fun changeColor() {
         binding.categoryButton.imageTintList =
             itemView.context.resources.getColorStateList(R.color.white, null)
         binding.categoryButton.background.setTint(itemView.context.getColor(R.color.ecommerce_orange))
         binding.categoryText.setTextColor(itemView.context.getColor(R.color.ecommerce_orange))
     }
 
-    private fun resetColor() {
+    fun resetColor() {
         binding.categoryButton.imageTintList =
             itemView.context.resources.getColorStateList(R.color.ecommerce_grey_dark, null)
         binding.categoryButton.background.setTint(itemView.context.getColor(R.color.white))

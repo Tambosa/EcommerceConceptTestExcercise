@@ -15,10 +15,7 @@ import com.aroman.domain.model.HomeStoreItem
 import com.aroman.ecommerceconcepttestexcercise.R
 import com.aroman.ecommerceconcepttestexcercise.databinding.BottomSheetHomeBinding
 import com.aroman.ecommerceconcepttestexcercise.databinding.FragmentHomeBinding
-import com.aroman.ecommerceconcepttestexcercise.ui.home.adapters.BestSellerAdapter
-import com.aroman.ecommerceconcepttestexcercise.ui.home.adapters.CategoryAdapter
-import com.aroman.ecommerceconcepttestexcercise.ui.home.adapters.HotSalesAdapter
-import com.aroman.ecommerceconcepttestexcercise.ui.home.adapters.autoScroll
+import com.aroman.ecommerceconcepttestexcercise.ui.home.adapters.*
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -113,7 +110,9 @@ class HomeFragment : Fragment() {
         for (category in categoryAdapter.getData()) {
             if (category.isChecked) {
                 category.isChecked = false
-                categoryAdapter.notifyItemChanged(categoryAdapter.getData().indexOf(category))
+                (binding.recyclerCategory.findViewHolderForAdapterPosition(
+                    categoryAdapter.getData().indexOf(category)
+                ) as CategoryViewHolder).resetColor()
             }
         }
         categoryAdapter.getData()[position].isChecked = true
