@@ -16,6 +16,10 @@
     <string name="show_details">Show Details</string>
     <string name="select_color_and_capacity">Select color and capacity</string>
     <string name="add_to_cart">Add to Cart</string>
+    <string name="explorer">Explorer</string>
+    <string name="cart">Cart</string>
+    <string name="favourites">Favourites</string>
+    <string name="profile">Profile</string>
 
     <string-array name="bottom_sheet_spinner_brand">
         <item>Samsung</item>

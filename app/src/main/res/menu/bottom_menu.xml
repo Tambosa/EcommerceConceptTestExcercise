@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_explorer"
+        app:cnb_iconColor="@color/white"
+        android:icon="@drawable/ic_menu_explore"
+        android:title="@string/explorer"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_cart"
+        app:cnb_iconColor="@color/white"
+        android:icon="@drawable/ic_menu_cart"
+        android:title="@string/cart"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_favourites"
+        app:cnb_iconColor="@color/white"
+        android:icon="@drawable/ic_menu_favourites"
+        android:title="@string/favourites"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_profile"
+        app:cnb_iconColor="@color/white"
+        android:icon="@drawable/ic_menu_profile"
+        android:title="@string/profile"
+        app:showAsAction="ifRoom" />
+</menu>

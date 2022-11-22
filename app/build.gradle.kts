@@ -62,6 +62,7 @@ dependencies {
     implementation(Libs.adapter_delegates_viewbinding)
 
     implementation ("org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:2.1.0")
+    implementation ("com.github.ismaeldivita:chip-navigation-bar:1.4.0")
 
     implementation(Libs.core_ktx)
     implementation(Libs.appcompat)
