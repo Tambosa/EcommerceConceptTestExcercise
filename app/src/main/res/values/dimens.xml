@@ -8,9 +8,9 @@
     <dimen name="margin_start_hot_sales">15dp</dimen>
     <dimen name="margin_end_hot_sales">21dp</dimen>
     <dimen name="corner_radius_card_view">10dp</dimen>
-    <dimen name="best_seller_item_width">181dp</dimen>
-    <dimen name="best_seller_item_hight">227dp</dimen>
-    <dimen name="best_seller_image_height">168dp</dimen>
+    <dimen name="best_seller_item_width">150dp</dimen>
+    <dimen name="best_seller_item_height">227dp</dimen>
+    <dimen name="best_seller_image_height">180dp</dimen>
     <dimen name="best_seller_item_margin_end">5dp</dimen>
     <dimen name="best_seller_item_margin_bottom">12dp</dimen>
     <dimen name="best_seller_image_margin_top">5dp</dimen>
@@ -68,4 +68,6 @@
     <dimen name="ecommerce_menu_height">72dp</dimen>
     <dimen name="checkout_margin">24dp</dimen>
     <dimen name="cart_buttons_margin_top">25dp</dimen>
+    <dimen name="margin_side_recycler_home">10dp</dimen>
+    <dimen name="item_best_seller_padding_bottom">10dp</dimen>
 </resources>
