@@ -57,4 +57,9 @@ class MainActivity : AppCompatActivity() {
         }
         viewModel.getCart()
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        tapBar.setItemSelected(R.id.menu_explorer, true)
+    }
 }

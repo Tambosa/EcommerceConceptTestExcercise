@@ -34,7 +34,6 @@ class HomeFragment : Fragment() {
         BestSellerAdapter({ position -> onBestSellerItemClick(position) },
             { position -> onBestSellerFavouriteClick(position) })
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
