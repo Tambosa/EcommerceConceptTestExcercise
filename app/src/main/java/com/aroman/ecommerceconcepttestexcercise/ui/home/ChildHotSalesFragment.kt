@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import coil.load
 import com.aroman.domain.model.HomeStoreItem
@@ -16,7 +17,9 @@ class ChildHotSalesFragment : Fragment() {
     private lateinit var hotSales: HomeStoreItem
 
     companion object {
+        private const val HOT_SALE = "hotSale"
         fun newInstance(hotSales: HomeStoreItem) = ChildHotSalesFragment().apply {
+            arguments = bundleOf(HOT_SALE to hotSales)
             this.hotSales = hotSales
         }
     }
@@ -37,6 +40,9 @@ class ChildHotSalesFragment : Fragment() {
     }
 
     private fun renderView() {
+        if (!this::hotSales.isInitialized) {
+            hotSales = arguments?.getParcelable<HomeStoreItem>(HOT_SALE)!!
+        }
         binding.apply {
             hotSalesTitle.text = hotSales.title
             hotSalesSubtitle.text = hotSales.subtitle

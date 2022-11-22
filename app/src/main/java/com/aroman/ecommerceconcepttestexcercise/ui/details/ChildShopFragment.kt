@@ -4,9 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import com.aroman.domain.model.HomeStoreItem
 import com.aroman.domain.model.PhoneDetails
 import com.aroman.ecommerceconcepttestexcercise.databinding.ChildFragmentShopBinding
+import com.aroman.ecommerceconcepttestexcercise.ui.home.ChildHotSalesFragment
 
 class ChildShopFragment : Fragment() {
     private var _binding: ChildFragmentShopBinding? = null
@@ -15,7 +18,9 @@ class ChildShopFragment : Fragment() {
     private lateinit var phoneDetails: PhoneDetails
 
     companion object {
+        private const val PHONE_DETAILS = "phoneDetails"
         fun newInstance(phoneDetails: PhoneDetails) = ChildShopFragment().apply {
+            arguments = bundleOf(PHONE_DETAILS to phoneDetails)
             this.phoneDetails = phoneDetails
         }
     }
@@ -35,6 +40,9 @@ class ChildShopFragment : Fragment() {
     }
 
     private fun renderView() {
+        if (!this::phoneDetails.isInitialized) {
+            phoneDetails = arguments?.getParcelable<PhoneDetails>(PHONE_DETAILS)!!
+        }
         binding.apply {
             textCpu.text = phoneDetails.cpu
             textCamera.text = phoneDetails.camera

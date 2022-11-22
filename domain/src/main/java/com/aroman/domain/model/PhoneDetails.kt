@@ -1,5 +1,9 @@
 package com.aroman.domain.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class PhoneDetails(
     val cpu: String,
     val camera: String,
@@ -13,4 +17,4 @@ data class PhoneDetails(
     val sd: String,
     val ssd: String,
     val title: String,
-)
+) : Parcelable
