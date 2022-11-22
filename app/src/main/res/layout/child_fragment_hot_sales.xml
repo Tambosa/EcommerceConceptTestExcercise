@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="182dp"
+    android:background="@color/black">
+
+    <ImageView
+        android:id="@+id/image_hot_sales"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:layout_marginStart="@dimen/hot_sales_image_margin_start"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/hot_sales_new"
+        style="@style/text_hot_sales_new_style"
+        android:layout_width="@dimen/new_button_size"
+        android:layout_height="@dimen/new_button_size"
+        android:layout_marginStart="@dimen/hot_sales_margin_start"
+        android:layout_marginTop="@dimen/new_button_margin_top"
+        android:background="@drawable/round_button"
+        android:src="@drawable/new_text_vector"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/hot_sales_title"
+        style="@style/text_hot_sales_title_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/hot_sales_margin_start"
+        android:layout_marginTop="@dimen/hot_sales_title_margin_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Iphone 12" />
+
+    <TextView
+        android:id="@+id/hot_sales_subtitle"
+        style="@style/text_hot_sales_subtitle_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/hot_sales_margin_start"
+        android:layout_marginTop="@dimen/hot_sales_subtitle_margin_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hot_sales_title"
+        tools:text="Super. Mega. Rapido" />
+
+    <TextView
+        android:id="@+id/hot_sales_buy_button"
+        style="@style/text_hot_sales_buy_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/hot_sales_margin_start"
+        android:layout_marginTop="@dimen/hot_sales_button_buy_margin_top"
+        android:background="@drawable/buy_now_button_background"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingStart="@dimen/buy_now_padding_horizontal"
+        android:paddingTop="@dimen/buy_now_padding_vertical"
+        android:paddingEnd="@dimen/buy_now_padding_horizontal"
+        android:paddingBottom="@dimen/buy_now_padding_vertical"
+        android:text="@string/buy_now"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hot_sales_subtitle" />
+</androidx.constraintlayout.widget.ConstraintLayout>
