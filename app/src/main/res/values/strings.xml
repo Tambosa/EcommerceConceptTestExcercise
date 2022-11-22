@@ -20,6 +20,10 @@
     <string name="cart">Cart</string>
     <string name="favourites">Favourites</string>
     <string name="profile">Profile</string>
+    <string name="my_cart">My Cart</string>
+    <string name="checkout">Checkout</string>
+    <string name="total">Total</string>
+    <string name="delivery">Delivery</string>
 
     <string-array name="bottom_sheet_spinner_brand">
         <item>Samsung</item>

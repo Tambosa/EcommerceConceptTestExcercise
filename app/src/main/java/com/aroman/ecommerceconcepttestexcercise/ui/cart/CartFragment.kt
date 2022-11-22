@@ -5,15 +5,25 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.aroman.ecommerceconcepttestexcercise.R
 import com.aroman.ecommerceconcepttestexcercise.databinding.FragmentCartBinding
+import com.aroman.ecommerceconcepttestexcercise.ui.MainActivity
+import com.aroman.ecommerceconcepttestexcercise.ui.cart.adapters.CartAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import java.text.DecimalFormat
 
 class CartFragment : Fragment() {
     private var _binding: FragmentCartBinding? = null
     private val binding get() = _binding!!
 
     private val viewModel: CartViewModel by viewModel()
+    private val cartAdapter = CartAdapter(
+        { position -> onPlusClick(position) },
+        { position -> onMinusClick(position) },
+        { position -> onDeleteClick(position) })
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,6 +39,10 @@ class CartFragment : Fragment() {
 
         initViewModel()
         loadData()
+        binding.buttonBack.setOnClickListener {
+            parentFragmentManager.popBackStack()
+            (activity as MainActivity).tapBar.setItemSelected(R.id.menu_explorer, true)
+        }
     }
 
     private fun initViewModel() {
@@ -37,6 +51,16 @@ class CartFragment : Fragment() {
         }
         viewModel.cartData.observe(viewLifecycleOwner) { data ->
             Log.d("@@@", data.toString())
+            binding.cartRecyclerView.adapter = cartAdapter
+            binding.cartRecyclerView.layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+            cartAdapter.setData(data.cartItemList)
+
+            binding.price.text = DecimalFormat("$#,###").format(data.totalPrice)
+            binding.deliveryPrice.text = data.delivery
+            binding.buttonCheckout.setOnClickListener {
+                Toast.makeText(requireContext(), "Checkout clicked", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -47,5 +71,25 @@ class CartFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    private fun onDeleteClick(position: Int) {
+        Toast.makeText(requireContext(), "Delete clicked", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun onMinusClick(position: Int) {
+        var totalPrice = 0
+        for (item in cartAdapter.getData()) {
+            totalPrice += item.price * item.count
+        }
+        binding.price.text = DecimalFormat("$#,###").format(totalPrice)
+    }
+
+    private fun onPlusClick(position: Int) {
+        var totalPrice = 0
+        for (item in cartAdapter.getData()) {
+            totalPrice += item.price * item.count
+        }
+        binding.price.text = DecimalFormat("$#,###").format(totalPrice)
     }
 }

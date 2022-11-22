@@ -1,7 +1,6 @@
 package com.aroman.ecommerceconcepttestexcercise.ui
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.aroman.ecommerceconcepttestexcercise.R
 import com.aroman.ecommerceconcepttestexcercise.databinding.ActivityMainBinding
@@ -9,11 +8,13 @@ import com.aroman.ecommerceconcepttestexcercise.ui.cart.CartFragment
 import com.aroman.ecommerceconcepttestexcercise.ui.cart.CartViewModel
 import com.aroman.ecommerceconcepttestexcercise.ui.home.HomeFragment
 import com.aroman.ecommerceconcepttestexcercise.utils.showShortToast
+import com.ismaeldivita.chipnavigation.ChipNavigationBar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
     private val viewModel: CartViewModel by viewModel()
     private lateinit var binding: ActivityMainBinding
+    lateinit var tapBar: ChipNavigationBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity() {
             .replace(binding.mainContainer.id, HomeFragment())
             .commit()
 
+        tapBar = binding.tapBar
         initBottomMenu()
         initViewModel()
     }

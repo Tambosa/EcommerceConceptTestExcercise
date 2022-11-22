@@ -66,4 +66,6 @@
     <dimen name="item_button_image_size">40dp</dimen>
     <dimen name="item_button_image_recycler">5dp</dimen>
     <dimen name="ecommerce_menu_height">72dp</dimen>
+    <dimen name="checkout_margin">24dp</dimen>
+    <dimen name="cart_buttons_margin_top">25dp</dimen>
 </resources>

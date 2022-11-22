@@ -57,6 +57,13 @@
         <item name="android:fontFamily">@font/sf_pro_display</item>
     </style>
 
+    <style name="cart_item_text_style">
+        <item name="android:fontWeight">500</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/mark_pro</item>
+    </style>
+
     <style name="text_hot_sales_subtitle_style">
         <item name="android:fontWeight">400</item>
         <item name="android:textColor">@color/white</item>
@@ -139,5 +146,29 @@
         <item name="android:textSize">20sp</item>
         <item name="android:fontFamily">@font/mark_pro</item>
         <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="text_my_cart">
+        <item name="android:fontWeight">700</item>
+        <item name="android:textSize">35sp</item>
+        <item name="android:textColor">@color/ecommerce_deep_blue</item>
+        <item name="android:fontFamily">@font/mark_pro</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="checkout_left_my_cart">
+        <item name="android:fontWeight">400</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/mark_pro</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="checkout_right_my_cart">
+        <item name="android:fontWeight">700</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/mark_pro</item>
+        <item name="android:letterSpacing">-0.01</item>
     </style>
 </resources>
