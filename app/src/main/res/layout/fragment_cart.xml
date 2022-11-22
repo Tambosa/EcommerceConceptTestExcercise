@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="80dp"
+    android:layout_marginBottom="60dp"
     android:background="@color/ecommerce_background"
     android:orientation="vertical">
 
@@ -36,7 +36,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/cart_buttons_margin_top"
-        android:text="@string/my_cart">
+        android:text="@string/my_cart"
+        app:cardBackgroundColor="@color/ecommerce_on_background">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

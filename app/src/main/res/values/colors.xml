@@ -13,6 +13,7 @@
     <color name="ecommerce_grey_dark">#B3B3C3</color>
     <color name="ecommerce_grey_light">#CCCCCC</color>
     <color name="ecommerce_background">#F5F5F5</color>
+    <color name="ecommerce_on_background">#FFFFFF</color>
     <color name="ecommerce_background25">#33FFFFFF</color>
     <color name="ecommerce_background20">#33F5F5F5</color>
 </resources>

@@ -7,12 +7,12 @@
     android:layout_marginStart="@dimen/best_seller_item_margin_end"
     android:layout_marginEnd="@dimen/best_seller_item_margin_end"
     android:layout_marginBottom="@dimen/best_seller_item_margin_bottom"
-    android:background="@color/white"
     app:cardCornerRadius="@dimen/corner_radius_card_view"
     app:cardElevation="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:background="@color/ecommerce_on_background"
         android:paddingBottom="@dimen/item_best_seller_padding_bottom"
         android:layout_height="match_parent">
 

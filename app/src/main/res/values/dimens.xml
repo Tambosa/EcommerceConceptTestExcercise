@@ -65,9 +65,10 @@
     <dimen name="button_add_to_cart_height">54dp</dimen>
     <dimen name="item_button_image_size">40dp</dimen>
     <dimen name="item_button_image_recycler">5dp</dimen>
-    <dimen name="ecommerce_menu_height">72dp</dimen>
+    <dimen name="ecommerce_menu_height">52dp</dimen>
     <dimen name="checkout_margin">24dp</dimen>
     <dimen name="cart_buttons_margin_top">25dp</dimen>
     <dimen name="margin_side_recycler_home">10dp</dimen>
     <dimen name="item_best_seller_padding_bottom">10dp</dimen>
+    <dimen name="bottom_sheet_details_tab_layout_margin_start">12dp</dimen>
 </resources>
