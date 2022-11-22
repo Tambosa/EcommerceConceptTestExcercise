@@ -13,7 +13,7 @@
     <com.ismaeldivita.chipnavigation.ChipNavigationBar
         android:id="@+id/tap_bar"
         android:layout_width="match_parent"
-        android:layout_height="72dp"
+        android:layout_height="@dimen/ecommerce_menu_height"
         android:layout_gravity="bottom"
         app:cnb_unselectedColor="@color/white"
         app:cnb_badgeColor="@color/ecommerce_orange"

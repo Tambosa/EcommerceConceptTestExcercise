@@ -57,7 +57,7 @@
     <dimen name="favourite_button_width">37dp</dimen>
     <dimen name="favourite_button_height">33dp</dimen>
     <dimen name="rating_bar_margin_top">7dp</dimen>
-    <dimen name="details_bottom_sheet_text_select_margin_top">29dp</dimen>
+    <dimen name="details_bottom_sheet_text_select_margin_top">10dp</dimen>
     <dimen name="bottom_sheet_details_radio_container_margin_start">15dp</dimen>
     <dimen name="bottom_sheet_details_button_add_to_cart_margin_horizontal">30dp</dimen>
     <dimen name="bottom_sheet_details_button_add_to_cart_margin_bottom">58dp</dimen>
@@ -65,4 +65,5 @@
     <dimen name="button_add_to_cart_height">54dp</dimen>
     <dimen name="item_button_image_size">40dp</dimen>
     <dimen name="item_button_image_recycler">5dp</dimen>
+    <dimen name="ecommerce_menu_height">72dp</dimen>
 </resources>

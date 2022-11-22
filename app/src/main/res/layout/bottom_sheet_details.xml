@@ -44,97 +44,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title" />
 
-    <ImageView
-        android:id="@+id/image_cpu"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_cpu"
-        app:layout_constraintEnd_toStartOf="@+id/image_camera"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rating_bar" />
-
-    <ImageView
-        android:id="@+id/image_camera"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_camera"
-        app:layout_constraintEnd_toStartOf="@+id/image_ssd"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/image_cpu"
-        app:layout_constraintTop_toBottomOf="@id/rating_bar" />
-
-    <ImageView
-        android:id="@+id/image_ssd"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_ssd"
-        app:layout_constraintEnd_toStartOf="@+id/image_sd"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/image_camera"
-        app:layout_constraintTop_toBottomOf="@id/rating_bar" />
-
-    <ImageView
-        android:id="@+id/image_sd"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_sd"
+        android:layout_marginStart="@dimen/bottom_sheet_details_title_margin_start"
+        android:layout_marginEnd="@dimen/bottom_sheet_details_title_margin_start"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/image_ssd"
-        app:layout_constraintTop_toBottomOf="@id/rating_bar" />
-
-    <TextView
-        android:id="@+id/text_cpu"
-        style="@style/text_details_bottom_sheet_details"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/text_camera"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image_cpu"
-        tools:text="Exynos 990" />
+        app:layout_constraintTop_toBottomOf="@id/rating_bar"
+        app:tabIndicatorColor="@color/ecommerce_orange"
+        app:tabIndicatorHeight="3dp"
+        app:tabSelectedTextColor="@color/ecommerce_deep_blue"
+        app:tabTextAppearance="@style/eccommerce_tab_text"
+        app:tabTextColor="@color/ecommerce_grey_dark" />
 
-    <TextView
-        android:id="@+id/text_camera"
-        style="@style/text_details_bottom_sheet_details"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/text_ssd"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/text_cpu"
-        app:layout_constraintTop_toBottomOf="@id/image_cpu"
-        tools:text="108 + 12mp" />
-
-    <TextView
-        android:id="@+id/text_ssd"
-        style="@style/text_details_bottom_sheet_details"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/text_sd"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/text_camera"
-        app:layout_constraintTop_toBottomOf="@id/image_cpu"
-        tools:text="8GB" />
-
-    <TextView
-        android:id="@+id/text_sd"
-        style="@style/text_details_bottom_sheet_details"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
+        android:layout_height="100dp"
+        android:layout_marginStart="@dimen/bottom_sheet_details_title_margin_start"
+        android:layout_marginEnd="@dimen/bottom_sheet_details_title_margin_start"
+        android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/text_ssd"
-        app:layout_constraintTop_toBottomOf="@id/image_cpu"
-        tools:text="256GB" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout" />
 
     <TextView
         android:id="@+id/text_select"
@@ -145,7 +79,7 @@
         android:layout_marginTop="@dimen/details_bottom_sheet_text_select_margin_top"
         android:text="@string/select_color_and_capacity"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_cpu" />
+        app:layout_constraintTop_toBottomOf="@id/view_pager" />
 
     <LinearLayout
         android:id="@+id/buttons_container"

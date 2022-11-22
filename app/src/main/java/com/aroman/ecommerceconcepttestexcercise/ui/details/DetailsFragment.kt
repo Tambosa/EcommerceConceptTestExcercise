@@ -13,9 +13,11 @@ import com.aroman.domain.model.ColorChoice
 import com.aroman.domain.model.PhoneDetails
 import com.aroman.ecommerceconcepttestexcercise.databinding.BottomSheetDetailsBinding
 import com.aroman.ecommerceconcepttestexcercise.databinding.FragmentDetailsBinding
+import com.aroman.ecommerceconcepttestexcercise.ui.details.adapters.BottomSheetAdapter
 import com.aroman.ecommerceconcepttestexcercise.ui.details.adapters.CapacityChoiceAdapter
 import com.aroman.ecommerceconcepttestexcercise.ui.details.adapters.ColorChoiceAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.tabs.TabLayoutMediator
 import org.imaginativeworld.whynotimagecarousel.model.CarouselGravity
 import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 import org.imaginativeworld.whynotimagecarousel.model.CarouselType
@@ -77,12 +79,18 @@ class DetailsFragment : Fragment() {
         dialogBinding.apply {
             title.text = phoneDetails.title
             ratingBar.rating = phoneDetails.rating
-            textCpu.text = phoneDetails.cpu
-            textCamera.text = phoneDetails.camera
-            textSsd.text = phoneDetails.ssd
-            textSd.text = phoneDetails.sd
             price.text = DecimalFormat("$#,###,###.00").format(phoneDetails.price)
         }
+
+        dialogBinding.viewPager.adapter = BottomSheetAdapter(this@DetailsFragment, phoneDetails)
+        TabLayoutMediator(dialogBinding.tabLayout, dialogBinding.viewPager) { tab, position ->
+            tab.text = when (position) {
+                0-> "Shop"
+                1-> "Details"
+                2-> "Features"
+                else -> ""
+            }
+        }.attach()
 
         initDialogOnClicks(dialog, dialogBinding)
         initRecyclers(phoneDetails, dialogBinding)
