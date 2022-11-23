@@ -1,16 +1,19 @@
 package com.aroman.ecommerceconcepttestexcercise.ui.details
 
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.aroman.domain.model.CapacityChoice
 import com.aroman.domain.model.ColorChoice
 import com.aroman.domain.model.PhoneDetails
+import com.aroman.ecommerceconcepttestexcercise.R
 import com.aroman.ecommerceconcepttestexcercise.databinding.BottomSheetDetailsBinding
 import com.aroman.ecommerceconcepttestexcercise.databinding.FragmentDetailsBinding
 import com.aroman.ecommerceconcepttestexcercise.ui.details.adapters.BottomSheetAdapter
@@ -33,6 +36,8 @@ class DetailsFragment : Fragment() {
     private val colorChoiceAdapter = ColorChoiceAdapter { position -> onColorItemClick(position) }
     private val capacityChoiceAdapter =
         CapacityChoiceAdapter { position -> onCapacityItemClick(position) }
+
+    private lateinit var phoneDetails: PhoneDetails
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -63,15 +68,16 @@ class DetailsFragment : Fragment() {
             binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
         }
         viewModel.homeDetailsData.observe(viewLifecycleOwner) { data ->
-            Log.d("@@@", data.toString())
-            initCarousel(data.imageUrls)
+            phoneDetails = data
+            Log.d("@@@", phoneDetails.toString())
+            initCarousel(phoneDetails.imageUrls)
             binding.buttonShowDetails.setOnClickListener {
-                openDialog(data)
+                openDialog()
             }
         }
     }
 
-    private fun openDialog(phoneDetails: PhoneDetails) {
+    private fun openDialog() {
         dialogBinding = BottomSheetDetailsBinding.inflate(LayoutInflater.from(requireContext()))
         val dialog = BottomSheetDialog(requireContext()).apply {
             setContentView(dialogBinding.root)
@@ -80,20 +86,21 @@ class DetailsFragment : Fragment() {
             title.text = phoneDetails.title
             ratingBar.rating = phoneDetails.rating
             price.text = DecimalFormat("$#,###,###.00").format(phoneDetails.price)
+            recolorFavourites(buttonFavourite)
         }
 
         dialogBinding.viewPager.adapter = BottomSheetAdapter(this@DetailsFragment, phoneDetails)
         TabLayoutMediator(dialogBinding.tabLayout, dialogBinding.viewPager) { tab, position ->
             tab.text = when (position) {
-                0-> "Shop"
-                1-> "Details"
-                2-> "Features"
+                0 -> "Shop"
+                1 -> "Details"
+                2 -> "Features"
                 else -> ""
             }
         }.attach()
 
         initDialogOnClicks(dialog, dialogBinding)
-        initRecyclers(phoneDetails, dialogBinding)
+        initChoiceRecyclers(dialogBinding)
         dialog.show()
     }
 
@@ -102,7 +109,8 @@ class DetailsFragment : Fragment() {
         dialogBinding: BottomSheetDetailsBinding
     ) {
         dialogBinding.buttonFavourite.setOnClickListener {
-            dialog.hide()
+            phoneDetails.isFavourites = !phoneDetails.isFavourites
+            recolorFavourites(dialogBinding.buttonFavourite)
         }
         dialogBinding.buttonAddToCart.setOnClickListener {
             var result = ""
@@ -117,10 +125,14 @@ class DetailsFragment : Fragment() {
         }
     }
 
-    private fun initRecyclers(
-        phoneDetails: PhoneDetails,
-        dialogBinding: BottomSheetDetailsBinding
-    ) {
+    private fun recolorFavourites(buttonFavourite: ImageButton) {
+        buttonFavourite.setImageDrawable(
+            if (phoneDetails.isFavourites) requireContext().getDrawable(R.drawable.ic_favourite_true_background)
+            else requireContext().getDrawable(R.drawable.ic_favourite_false_foreground)
+        )
+    }
+
+    private fun initChoiceRecyclers(dialogBinding: BottomSheetDetailsBinding) {
         dialogBinding.recyclerColor.apply {
             layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)

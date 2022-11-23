@@ -11,7 +11,7 @@ data class PhoneDetails(
     val color: List<String>,
     val id: Int,
     val imageUrls: List<String>,
-    val isFavourites: Boolean = false,
+    var isFavourites: Boolean = false,
     val price: Int,
     val rating: Float,
     val sd: String,
