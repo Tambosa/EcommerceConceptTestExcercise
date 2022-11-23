@@ -7,10 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.aroman.domain.model.Cart
 import com.aroman.ecommerceconcepttestexcercise.R
 import com.aroman.ecommerceconcepttestexcercise.databinding.FragmentCartBinding
 import com.aroman.ecommerceconcepttestexcercise.ui.MainActivity
-import com.aroman.ecommerceconcepttestexcercise.ui.cart.adapters.CartAdapter
+import com.aroman.ecommerceconcepttestexcercise.ui.cart.adapters.MainCartAdapter
 import com.aroman.ecommerceconcepttestexcercise.utils.showShortToast
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.text.DecimalFormat
@@ -20,9 +21,11 @@ class CartFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel: CartViewModel by viewModel()
-    private val cartAdapter = CartAdapter(
-        { position -> onPlusClick(position) },
-        { position -> onMinusClick(position) },
+
+    // Adapter Delegate
+    private val cartAdapter = MainCartAdapter(
+        { position -> onPlusClicked(position) },
+        { position -> onMinusClicked(position) },
         { position -> onDeleteClick(position) })
 
     override fun onCreateView(
@@ -51,16 +54,25 @@ class CartFragment : Fragment() {
         }
         viewModel.cartData.observe(viewLifecycleOwner) { data ->
             Log.d("@@@", data.toString())
-            binding.cartRecyclerView.adapter = cartAdapter
-            binding.cartRecyclerView.layoutManager =
-                LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-            cartAdapter.setData(data.cartItemList)
+            initView(data)
+        }
+    }
 
-            binding.price.text = DecimalFormat("$#,###").format(data.totalPrice)
-            binding.deliveryPrice.text = data.delivery
-            binding.buttonCheckout.setOnClickListener {
-                requireContext().showShortToast("Checkout clicked")
-            }
+    private fun initView(cartData: Cart) {
+        binding.cartRecyclerView.adapter = cartAdapter
+        binding.cartRecyclerView.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        cartAdapter.items = cartData.cartItemList
+
+        var totalPrice = 0
+        for (item in cartData.cartItemList) {
+            totalPrice += item.price * item.count
+        }
+        binding.price.text = DecimalFormat("$#,###").format(totalPrice)
+
+        binding.deliveryPrice.text = cartData.delivery
+        binding.buttonCheckout.setOnClickListener {
+            requireContext().showShortToast("Checkout clicked")
         }
     }
 
@@ -74,22 +86,16 @@ class CartFragment : Fragment() {
     }
 
     private fun onDeleteClick(position: Int) {
-        requireContext().showShortToast("${cartAdapter.getData()[position].title} delete clicked")
+        requireContext().showShortToast("Delete clicked")
     }
 
-    private fun onMinusClick(position: Int) {
-        var totalPrice = 0
-        for (item in cartAdapter.getData()) {
-            totalPrice += item.price * item.count
-        }
-        binding.price.text = DecimalFormat("$#,###").format(totalPrice)
+    private fun onPlusClicked(position: Int) {
+        viewModel.increaseItemQuantity(position)
+        cartAdapter.notifyItemChanged(position)
     }
 
-    private fun onPlusClick(position: Int) {
-        var totalPrice = 0
-        for (item in cartAdapter.getData()) {
-            totalPrice += item.price * item.count
-        }
-        binding.price.text = DecimalFormat("$#,###").format(totalPrice)
+    private fun onMinusClicked(position: Int) {
+        viewModel.reduceItemQuantity(position)
+        cartAdapter.notifyItemChanged(position)
     }
 }

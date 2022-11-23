@@ -18,4 +18,4 @@ data class CartItem(
     val price: Int,
     val title: String,
     var count: Int = 1,
-) : Parcelable
+) : Parcelable, DisplayableItem

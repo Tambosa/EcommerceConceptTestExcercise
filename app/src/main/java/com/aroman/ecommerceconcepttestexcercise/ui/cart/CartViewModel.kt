@@ -35,4 +35,16 @@ class CartViewModel(private val getCartUseCase: GetCartUseCase) : ViewModel() {
             }
         }.launchIn(viewModelScope)
     }
+
+    fun reduceItemQuantity(position: Int) {
+        if (_cartData.value!!.cartItemList[position].count > 1) {
+            _cartData.value!!.cartItemList[position].count -= 1
+        }
+        _cartData.value = _cartData.value
+    }
+
+    fun increaseItemQuantity(position: Int) {
+        _cartData.value!!.cartItemList[position].count += 1
+        _cartData.value = _cartData.value
+    }
 }
