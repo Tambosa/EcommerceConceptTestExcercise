@@ -53,7 +53,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun initViewModel() {
         viewModel.cartData.observe(this) { data ->
-            binding.tapBar.showBadge(R.id.menu_cart, data.cartItemList.size)
+            var badge = 0
+            for (cartItem in data.cartItemList) {
+                badge += cartItem.count
+            }
+            binding.tapBar.showBadge(R.id.menu_cart, badge)
         }
         viewModel.getCart()
     }

@@ -33,7 +33,7 @@ object KoinModules {
 
     val viewModel = module {
         viewModel<HomeViewModel> { HomeViewModel(get<GetHomePageUseCase>()) }
-        viewModel<CartViewModel> { CartViewModel(get<GetCartUseCase>()) }
+        single<CartViewModel> { CartViewModel(get<GetCartUseCase>()) }
         viewModel<DetailsViewModel> { DetailsViewModel(get<GetPhoneDetailsUseCase>()) }
     }
 }
