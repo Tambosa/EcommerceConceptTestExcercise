@@ -19,8 +19,7 @@
 
 в тапбаре отображается кол-во товаров в корзине. По тапу открывается фрагмент с корзиной
 
-[ezgif-5.webm](https://user-images.githubusercontent.com/73552496/203529433-88e009b8-cf57-4480-bdd4-dea72ef40e44.webm)
-
+[ezgif-5.webm](https://user-images.githubusercontent.com/73552496/203534936-fbe37a79-9d89-451d-bee5-8465925bfd7c.webm)
 
 ### Techs
 
