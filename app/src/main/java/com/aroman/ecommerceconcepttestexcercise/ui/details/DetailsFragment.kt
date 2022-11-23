@@ -1,13 +1,11 @@
 package com.aroman.ecommerceconcepttestexcercise.ui.details
 
-import android.content.res.ColorStateList
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.aroman.domain.model.CapacityChoice
@@ -19,6 +17,7 @@ import com.aroman.ecommerceconcepttestexcercise.databinding.FragmentDetailsBindi
 import com.aroman.ecommerceconcepttestexcercise.ui.details.adapters.BottomSheetAdapter
 import com.aroman.ecommerceconcepttestexcercise.ui.details.adapters.CapacityChoiceAdapter
 import com.aroman.ecommerceconcepttestexcercise.ui.details.adapters.ColorChoiceAdapter
+import com.aroman.ecommerceconcepttestexcercise.utils.showShortToast
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.tabs.TabLayoutMediator
 import org.imaginativeworld.whynotimagecarousel.model.CarouselGravity
@@ -121,7 +120,7 @@ class DetailsFragment : Fragment() {
             for (capacityChoice in capacityChoiceAdapter.getData()) {
                 if (capacityChoice.isChosen) result += " capacity: ${capacityChoice.capacity}"
             }
-            Toast.makeText(requireContext(), result, Toast.LENGTH_SHORT).show()
+            requireContext().showShortToast(result)
         }
     }
 
@@ -148,19 +147,9 @@ class DetailsFragment : Fragment() {
     }
 
     private fun onColorItemClick(position: Int) {
-        Toast.makeText(
-            requireContext(),
-            colorChoiceAdapter.getData()[position].toString(),
-            Toast.LENGTH_SHORT
-        ).show()
     }
 
     private fun onCapacityItemClick(position: Int) {
-        Toast.makeText(
-            requireContext(),
-            capacityChoiceAdapter.getData()[position].toString(),
-            Toast.LENGTH_SHORT
-        ).show()
     }
 
     private fun initCarousel(imageUrls: List<String>) {

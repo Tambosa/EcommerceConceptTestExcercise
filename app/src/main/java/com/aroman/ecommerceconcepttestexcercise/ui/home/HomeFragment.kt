@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Spinner
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,6 +19,7 @@ import com.aroman.ecommerceconcepttestexcercise.ui.home.adapters.BestSellerAdapt
 import com.aroman.ecommerceconcepttestexcercise.ui.home.adapters.CategoryAdapter
 import com.aroman.ecommerceconcepttestexcercise.ui.home.adapters.HotSalesAdapter
 import com.aroman.ecommerceconcepttestexcercise.ui.home.adapters.autoScroll
+import com.aroman.ecommerceconcepttestexcercise.utils.showShortToast
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -55,15 +55,12 @@ class HomeFragment : Fragment() {
 
     private fun initButtons() {
         binding.categoryViewAll.setOnClickListener {
-            Toast.makeText(requireContext(), "categoryViewAll", Toast.LENGTH_SHORT).show()
             showFilterOptions()
         }
         binding.hotSalesSeeMore.setOnClickListener {
-            Toast.makeText(requireContext(), "hotSalesSeeMore", Toast.LENGTH_SHORT).show()
             showFilterOptions()
         }
         binding.bestSellerSeeMore.setOnClickListener {
-            Toast.makeText(requireContext(), "bestSellerSeeMore", Toast.LENGTH_SHORT).show()
             showFilterOptions()
         }
     }
@@ -110,11 +107,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun onCategoryItemClick(position: Int) {
-        Toast.makeText(
-            requireContext(),
-            categoryAdapter.getData()[position].toString(),
-            Toast.LENGTH_SHORT
-        ).show()
+        requireContext().showShortToast(categoryAdapter.getData()[position].toString())
     }
 
     private fun onBestSellerItemClick(position: Int) {
@@ -125,11 +118,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun onBestSellerFavouriteClick(position: Int) {
-        Toast.makeText(
-            requireContext(),
-            bestSellerAdapter.getData()[position].title + " like clicked",
-            Toast.LENGTH_SHORT
-        ).show()
+        requireContext().showShortToast(bestSellerAdapter.getData()[position].title + " like clicked")
     }
 
     private fun showFilterOptions() {
@@ -149,11 +138,7 @@ class HomeFragment : Fragment() {
     ) {
         dialogBinding.buttonClose.setOnClickListener { dialog.hide() }
         dialogBinding.buttonDone.setOnClickListener {
-            Toast.makeText(
-                requireContext(),
-                "${dialogBinding.spinnerBrand.selectedItem} ${dialogBinding.spinnerPrice.selectedItem} ${dialogBinding.spinnerSize.selectedItem}",
-                Toast.LENGTH_SHORT
-            ).show()
+            requireContext().showShortToast("${dialogBinding.spinnerBrand.selectedItem} ${dialogBinding.spinnerPrice.selectedItem} ${dialogBinding.spinnerSize.selectedItem}")
             dialog.hide()
         }
     }
