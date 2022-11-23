@@ -2,16 +2,18 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="@dimen/best_seller_item_width"
-    android:layout_height="@dimen/best_seller_item_hight"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/best_seller_item_margin_end"
     android:layout_marginEnd="@dimen/best_seller_item_margin_end"
     android:layout_marginBottom="@dimen/best_seller_item_margin_bottom"
-    android:background="@color/white"
     app:cardCornerRadius="@dimen/corner_radius_card_view"
     app:cardElevation="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:background="@color/ecommerce_on_background"
+        android:paddingBottom="@dimen/item_best_seller_padding_bottom"
         android:layout_height="match_parent">
 
         <androidx.appcompat.widget.AppCompatImageView

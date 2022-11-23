@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="80dp"
+    android:layout_marginBottom="60dp"
     android:background="@color/ecommerce_background"
     android:orientation="vertical">
 
@@ -26,7 +26,7 @@
             style="@style/text_my_cart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_gravity="bottom"
             android:layout_marginStart="@dimen/back_button_margin_start"
             android:text="@string/my_cart" />
     </LinearLayout>
@@ -36,7 +36,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/cart_buttons_margin_top"
-        android:text="@string/my_cart">
+        android:text="@string/my_cart"
+        app:cardBackgroundColor="@color/ecommerce_on_background">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -47,9 +48,9 @@
                 android:id="@+id/cart_recycler_view"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginStart="23dp"
+                android:layout_marginStart="13dp"
                 android:layout_marginTop="23dp"
-                android:layout_marginEnd="23dp"
+                android:layout_marginEnd="13dp"
                 android:layout_marginBottom="15dp"
                 app:layout_constraintBottom_toTopOf="@id/total"
                 app:layout_constraintEnd_toEndOf="parent"

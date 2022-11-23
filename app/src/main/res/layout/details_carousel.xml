@@ -6,11 +6,11 @@
     android:layout_marginEnd="@dimen/details_card_view_margin_horizontal"
     app:cardElevation="2dp"
     android:layout_height="match_parent"
-    android:background="@color/white"
     app:cardCornerRadius="@dimen/details_card_view_corner_radius">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:background="@color/ecommerce_on_background"
         android:layout_height="match_parent">
 
         <ImageView

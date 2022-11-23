@@ -52,11 +52,11 @@ class ColorChoiceAdapter(private val onItemClick: (position: Int) -> Unit) :
             }
         }
 
-        fun addCheck() {
+        private fun addCheck() {
             binding.image.foreground = itemView.context.getDrawable(R.drawable.ic_baseline_check_24)
         }
 
-        fun removeCheck() {
+        private fun removeCheck() {
             binding.image.foreground = null
         }
     }
