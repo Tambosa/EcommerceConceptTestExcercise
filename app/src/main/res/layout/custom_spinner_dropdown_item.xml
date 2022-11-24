@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:paddingStart="10dp"
+    android:layout_height="?attr/dropdownListPreferredItemHeight"
+    android:ellipsize="marquee"
+    android:fontFamily="@font/mark_pro"
+    android:letterSpacing="-0.02"
+    android:singleLine="true"
+    android:textColor="@color/ecommerce_deep_blue"
+    android:textSize="18sp" />
