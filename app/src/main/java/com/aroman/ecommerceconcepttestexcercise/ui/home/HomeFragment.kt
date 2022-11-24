@@ -144,18 +144,18 @@ class HomeFragment : Fragment() {
     }
 
     private fun initSpinners(dialogBinding: BottomSheetHomeBinding) {
-        initSpinner(R.array.bottom_sheet_spinner_brand, dialogBinding.spinnerBrand)
-        initSpinner(R.array.bottom_sheet_spinner_price, dialogBinding.spinnerPrice)
-        initSpinner(R.array.bottom_sheet_spinner_size, dialogBinding.spinnerSize)
+        initSpinnerFromStringArray(R.array.bottom_sheet_spinner_brand, dialogBinding.spinnerBrand)
+        initSpinnerFromStringArray(R.array.bottom_sheet_spinner_price, dialogBinding.spinnerPrice)
+        initSpinnerFromStringArray(R.array.bottom_sheet_spinner_size, dialogBinding.spinnerSize)
     }
 
-    private fun initSpinner(stringArray: Int, spinner: Spinner) {
+    private fun initSpinnerFromStringArray(stringArray: Int, spinner: Spinner) {
         ArrayAdapter.createFromResource(
             requireContext(),
             stringArray,
             android.R.layout.simple_spinner_item
         ).also { adapter ->
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            adapter.setDropDownViewResource(R.layout.custom_spinner_dropdown_item)
             spinner.adapter = adapter
         }
     }

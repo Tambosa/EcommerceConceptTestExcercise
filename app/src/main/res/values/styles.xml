@@ -87,13 +87,6 @@
         <item name="android:letterSpacing">-0.02</item>
     </style>
 
-    <style name="text_bottom_sheet_spinner">
-        <item name="android:fontWeight">400</item>
-        <item name="android:textColor">@color/ecommerce_deep_blue</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:fontFamily">@font/mark_pro</item>
-    </style>
-
     <style name="text_bottom_sheet_button_done">
         <item name="android:fontWeight">500</item>
         <item name="android:textColor">@color/white</item>
@@ -170,5 +163,12 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:fontFamily">@font/mark_pro</item>
         <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="EcommerceSpinnerStyle">
+        <item name="android:fontWeight">400</item>
+        <item name="android:textColor">@color/ecommerce_deep_blue</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/mark_pro</item>
     </style>
 </resources>

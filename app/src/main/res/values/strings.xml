@@ -32,8 +32,8 @@
     </string-array>
     <string-array name="bottom_sheet_spinner_price">
         <item>$300-$500</item>
-        <item>$500-$700</item>
-        <item>above $700</item>
+        <item>$500-$1000</item>
+        <item>$1000-$10000</item>
     </string-array>
     <string-array name="bottom_sheet_spinner_size">
         <item>4.5 to 5.5 inches</item>
