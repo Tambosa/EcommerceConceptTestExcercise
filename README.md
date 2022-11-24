@@ -3,23 +3,23 @@
 
 При запуске проекта нас встречает splash screen
 
-[1.webm](https://user-images.githubusercontent.com/73552496/203527270-9a27de67-6630-4e53-8cdd-fdd78b7a0339.webm)
+[1.webm](https://user-images.githubusercontent.com/73552496/203754607-8157c2aa-accf-4467-ba76-1228b5082326.webm)
 
 На стартовом экране можно выбрать категорию, Hot Sales прокручивается автоматически а снизу распологается Best Seller.
 
-[ezgif-3-2e2ddf8b1b.webm](https://user-images.githubusercontent.com/73552496/203528016-3d278271-7386-4cf6-8a26-ff3694a7310c.webm)
+[2.webm](https://user-images.githubusercontent.com/73552496/203754616-00ab0e13-1b4e-4c98-be54-4eb4f0330bdc.webm)
 
 по клику на view all открывается filter options
 
-[ezgif-3.webm](https://user-images.githubusercontent.com/73552496/203529059-c8c840d7-5ab4-482f-b067-44a93b4b2636.webm)
+[3.webm](https://user-images.githubusercontent.com/73552496/203754632-9efcb377-513f-4cc0-afd7-d96947e68745.webm)
 
 по клику на товар открывается фрагмент с деталями
 
-[ezgif-4.webm](https://user-images.githubusercontent.com/73552496/203529226-03a4121b-2adc-4d6c-9bf2-77843c582c12.webm)
+[4.webm](https://user-images.githubusercontent.com/73552496/203754642-8c55b2de-6293-4213-912b-333574cf680c.webm)
 
 в тапбаре отображается кол-во товаров в корзине. По тапу открывается фрагмент с корзиной. Кол-во товаров можно менять, обновляется цена и badge в тапбаре
 
-[ezgif-5.webm](https://user-images.githubusercontent.com/73552496/203534936-fbe37a79-9d89-451d-bee5-8465925bfd7c.webm)
+[5.webm](https://user-images.githubusercontent.com/73552496/203754650-cade47b6-0566-4479-b58d-c3e24735d818.webm)
 
 ### Techs
 
@@ -34,3 +34,5 @@
 - Для красивого тапбара используется библиотека chip-navigation-bar
 - Для простой карусели используется библиотека whynotimagecarousel
 - Проект разбил на три модуля app, domain, data.
+- Некоторые изменения в дизайн вносились намеренно, так, например, у тапбара округление только сверху а в фрагменте с корзиной уменьшено пустое пространство вверху.
+- Так же добавил unit тесты для вьюмодели и юзкейсов
